@@ -4,6 +4,7 @@ const shortid = require('shortid')
 const Razorpay = require('razorpay')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const port=5000
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -60,7 +61,6 @@ app.post('/verification', (req, res) => {
 	res.json({ status: 'ok' })
 })
 
-app.listen(process.env.PORT||1337, () => {
-	console.log(process.env.PORT)
-	console.log('Listening on 1337')
+app.listen(process.env.PORT||port, () => {
+	console.log(`Listening on ${port}`)
 })
